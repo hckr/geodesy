@@ -20,6 +20,8 @@ except ImportError:
 if not sys.platform == "win32":
     # suppress warnings for importing numpy
     CARGS.append("-Wno-unused-function")
+    # suppress errors for narrowing
+    CARGS.append("-Wno-narrowing")
 
 extensions = [
     Extension("geodesy.sphere",
